@@ -19,3 +19,10 @@ def compare_files(file1, file2):
     return same_lines, diff_lines
 
 
+def write_results(same_lines, diff_lines):
+    """Write comparison results to output files."""
+    with open('same.txt', 'w', encoding='utf-8') as file:
+        file.write('\n'.join(sorted(same_lines)))
+
+    with open('diff.txt', 'w', encoding='utf-8') as file:
+        file.write('\n'.join(sorted(diff_lines)))
