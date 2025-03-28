@@ -1,16 +1,20 @@
-# This is a sample Python script.
+from file_comparator import main
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+if __name__ == "__main__":
+    # Вказуємо шляхи до наших тестових файлів
+    file1_path = "file1.txt"
+    file2_path = "file2.txt"
 
+    print(f"Порівнюємо файли: {file1_path} та {file2_path}")
+    main(file1_path, file2_path)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    # Виводимо результати для перевірки
+    print("\nРезультати порівняння:")
 
+    print("\nСпільні рядки (same.txt):")
+    with open('same.txt', 'r', encoding='utf-8') as f:
+        print(f.read())
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    print("\nУнікальні рядки (diff.txt):")
+    with open('diff.txt', 'r', encoding='utf-8') as f:
+        print(f.read())
